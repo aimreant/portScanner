@@ -1,0 +1,29 @@
+.scan_input{
+    width: 100%;
+    display: block;
+    margin: 10px;
+    padding: 10px;
+}
+
+.scan_input>label{
+    margin-top: 5px;
+}
+
+.scan_button{
+    float: right;
+    position: absolute;
+    margin-top: 20px;
+}
+
+#output{
+    top: 30px;
+    float: right;
+    width: 60%;
+    height: 800px;
+    position: relative;
+}
+
+.input_form{
+    width:30%;
+    float:left;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="web tools">
+    <meta name="author" content="aimreant">
+    <link rel="icon" href="">
+
+    <title>Port Scanner | Web Tools</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/navbar-fixed-top.css" rel="stylesheet">
+    <link href="../static/css/scanner.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Web Tools</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/scanner">Port Scanner</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active" id="single_tab"><a href="#">Single Port</a></li>
+        <li role="presentation" id="multi_tab"><a href="#">Multi Ports</a></li>
+        <li role="presentation" id="multi_ip_tab"><a href="#">Multi IP</a></li>
+        <li role="presentation" id="common_tab"><a href="#">Common Ports</a></li>
+      </ul>
+
+      <!-- Single Port -->
+      <form action="#" method="post" class="input_form" id="single_port">
+        <div class="scan_input">
+          <label>IP:</label>
+          <input type="text" placeholder="127.0.0.1" class="col-md-3 form-control" name="sin_ip" id="sin_ip">
+        </div>
+        <div class="scan_input">
+          <label>Port:</label>
+          <input type="text" placeholder="80" class="col-md-3 form-control" name="sin_port" id="sin_port">
+        </div>
+        <input type="hidden" value="selected" name="method">
+
+        <div class="scan_input scan_button">
+          <button type="button" class="btn btn-success" id="single_scan">Scan !</button>
+        </div>
+      </form>
+
+      <!-- Multi Port -->
+      <form action="#" method="post" style="display: none;" class="input_form" id="multi_port">
+        <div class="scan_input">
+          <label>IP:</label>
+          <input type="text" placeholder="127.0.0.1" class="col-md-3 form-control" name="mul_ip" id="mul_ip">
+        </div>
+        <div class="scan_input">
+          <label>Starting Port:</label>
+          <input type="text" placeholder="1" class="col-md-3 form-control" name="start_port" id="start_port">
+        </div>
+        <div class="scan_input">
+          <label>Ending Port:</label>
+          <input type="text" placeholder="10086" class="col-md-3 form-control" name="end_port" id="end_port">
+        </div>
+        <input type="hidden" value="sequential" name="method">
+
+        <div class="scan_input scan_button">
+          <button type="button" class="btn btn-success" id="multi_scan">Scan !</button>
+        </div>
+      </form>
+
+      <!-- Multi IP -->
+      <form action="#" method="post" style="display: none;" class="input_form" id="multi_ip">
+        <div class="scan_input">
+          <label>Starting IP:</label>
+          <input type="text" placeholder="127.0.0.1" class="col-md-3 form-control" name="start_ip" id="start_ip">
+        </div>
+        <div class="scan_input">
+          <label>Ending IP:</label>
+          <input type="text" placeholder="127.0.0.1" class="col-md-3 form-control" name="end_ip" id="end_ip">
+        </div>
+        <div class="scan_input">
+          <label>Starting Port:</label>
+          <input type="text" placeholder="1" class="col-md-3 form-control" name="multi_ip_start_port" id="multi_ip_start_port">
+        </div>
+        <div class="scan_input">
+          <label>Ending Port:</label>
+          <input type="text" placeholder="10086" class="col-md-3 form-control" name="multi_ip_end_port" id="multi_ip_end_port">
+        </div>
+        <input type="hidden" value="multi_ip" name="method">
+
+        <div class="scan_input scan_button">
+          <button type="button" class="btn btn-success" id="multi_ip_scan">Scan !</button>
+        </div>
+      </form>
+
+      <!-- Common Port -->
+      <form action="#" method="post" style="display: none;" class="input_form" id="common_port">
+        <div class="scan_input">
+          <label>IP:</label>
+          <input type="text" placeholder="127.0.0.1" class="col-md-3 form-control" name="com_ip" id="com_ip">
+        </div>
+
+        <input type="hidden" value="common" name="method">
+
+        <div class="scan_input scan_button">
+          <button type="button" class="btn btn-success" id="common_scan">Scan !</button>
+        </div>
+      </form>
+
+
+
+      <div id="output">
+
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../static/js/jquery-2.2.3.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/scanner.js"></script>
+
+  </body>
+</html>
